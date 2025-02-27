@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get("/sessions/:id/edit", {:controller => "sessions", :action => "edit"})
   # patch("/sessions/:id", {:controller => "sessions", :action => "update"})
   # delete("/sessions/:id", {:controller => "sessions", :action => "destroy"})
-  get("/login", {:controller => "sessions", :action => "new"})
+  get("/login", {:controller => "sessions", :action => "new"}) #this is a named route. Doesn't exactly match up
   get("/logout", {:controller => "sessions", :action => "destroy"})
 
   # Landing page (aka root route)
