@@ -13,12 +13,12 @@
     <p>
       <!-- if no user logged-in, display signup and login links -->
       <!-- else, if user logged-in, display user name and logout link -->
-      <% @user = User.find_by({"id" => session["user_id"]})%>
+      <% @user = User.find_by({"id" => session["user_id"]}) %>
       
-      <% if @user == nil%>
+      <% if @user == nil%> <!--#if user is not logged in, show "Login button" -->
         <a href="/users/new">Sign Up</a>
         <a href="/login">Login</a>
-      <%else%>
+      <%else%> <!--#if user is logged in, show "Logout button" -->
         Welcome, <%= @user["first_name"]%>
         <a href="/logout">Logout</a>
       <%end%>
