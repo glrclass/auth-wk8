@@ -1,9 +1,11 @@
 <h1>Do the TODOs</h1>
 
-<form action="/tasks" method="post">
-  <input type="text" name="description">
-  <button>Add new task</button>
-</form>
+<% if session["user_id"] != nil %>
+  <form action="/tasks" method="post">
+    <input type="text" name="description">
+    <button>Add new task</button>
+  </form>
+<% end %>
 
 <table>
   <% for task in @tasks %>

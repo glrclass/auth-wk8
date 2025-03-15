@@ -34,6 +34,8 @@ class SessionsController < ApplicationController
 
   def destroy
     # logout the user
+    session["user_id"] = nil #empty it out aka no user logged in. End session by getting rid of the user_id cookie.
+
     flash["notice"] = "Goodbye."
     redirect_to "/login"
   end
